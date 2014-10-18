@@ -31,7 +31,10 @@ if (!fs.existsSync(fullInFile)) {
 
 fileContent = fs.readFileSync(fullInFile).toString('utf-8');
 characters = fileContent.split(/\n\n/).map(function (character) {
-	return character.split(/\n/);
+	// remove empty lines (final newline)
+	return character.split(/\n/).filter(function (line) {
+		return line !== '';
+	});
 });
 
 
@@ -76,7 +79,7 @@ function charWidth(initial, character) {
 }
 
 function charHeight(initial, character) {
-	var len = character.length - 2;
+	var len = character.length - 1;
 	return len > initial ? len : initial;
 }
 
