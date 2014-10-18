@@ -1,0 +1,27 @@
+{
+  "name": "led-canvas-fonts",
+  "version": "0.0.1",
+  "description": "Example LED fonts to be used with https://github.com/marionebl/led-canvas",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "node ./bin/generator ./fonts/default.font ./lib/fonts/default.json && node ./bin/generator ./fonts/enhanced.font ./lib/fonts/enhanced.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marionebl/led-canvas-fonts.git"
+  },
+  "keywords": [
+    "led",
+    "canvas",
+    "led-board"
+  ],
+  "author": "Mario Nebl <hello@mario-nebl.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marionebl/led-canvas-fonts/issues"
+  },
+  "homepage": "https://github.com/marionebl/led-canvas-fonts",
+  "devDependencies": {
+    "require-all": "0.0.8"
+  }
+}
