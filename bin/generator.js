@@ -42,18 +42,10 @@ font.meta.lineHeight = characters.reduce(charHeight, 0);
 for (var i = 0; i < characters.length; i += 1) {
 	var charData = characters[i];
 	var identifier = charData.shift().replace('# ', '');
-	var charBuffer = generateCharData(charData);
-
-	var xBuffer = charBuffer.map(function (blob) {
-		return blob[0];
-	});
-
-	var width = Math.max.apply(Math, xBuffer) + 1;
-	charWidths.push(width);
 
 	font.chars[identifier] = {
-		data: charBuffer,
-		width: width
+		data: generateCharData(charData),
+		width: charWidth(0, charData)
 	};
 }
 
