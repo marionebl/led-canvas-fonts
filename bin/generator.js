@@ -7,7 +7,6 @@ var fullInFile = path.resolve(process.cwd(), inFile || '');
 var fullOutFile = path.resolve(process.cwd(), outFile || '');
 var fileContent = null;
 var characters = [];
-var charWidths = [];
 var output = null;
 
 var font = {
@@ -37,6 +36,9 @@ characters = fileContent.split(/\n\n/).map(function (character) {
 
 font.meta.charWidth = characters.reduce(charWidth, 0);
 font.meta.lineHeight = characters.reduce(charHeight, 0);
+font.meta.monospaced = characters.every(function (character) {
+    return charWidth(0, character) === font.meta.charWidth;
+});
 
 
 for (var i = 0; i < characters.length; i += 1) {
@@ -55,10 +57,6 @@ for (var i = 0; i < characters.length; i += 1) {
 		data: charBuffer,
 		width: width
 	};
-}
-
-if (Math.max.apply(Math, charWidths) !== Math.min.apply(Math, charWidths)) {
-	font.meta.monospaced = false;
 }
 
 output = JSON.stringify(font, null, 2);
