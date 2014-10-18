@@ -1,4 +1,4 @@
 led-canvas-fonts
 ================
 
-Example LED class to be used with https://github.com/marionebl/led-canvas.
+Example LED fonts to be used with https://github.com/marionebl/led-canvas.
