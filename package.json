@@ -4,7 +4,7 @@
   "description": "Example LED fonts to be used with https://github.com/marionebl/led-canvas",
   "main": "index",
   "scripts": {
-    "build": "for file in $(ls ./fonts/); do ./bin/generator ./fonts/$file ./lib/fonts/${file/.font/.json}; done"
+    "build": "for file in $(ls ./fonts/); do ./bin/generator ./fonts/$file ./${file/.font/.json}; done"
   },
   "repository": {
     "type": "git",
