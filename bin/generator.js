@@ -80,7 +80,7 @@ function generateCharData(character) {
 
 		for (var x = 0; x < line.length; x += 1) {
 			if ([' ', '#', '.'].indexOf(line.charAt(x)) === -1) {
-				coords.push([x, y]);
+				coords.push(x, y);
 			}
 		}
 	}
