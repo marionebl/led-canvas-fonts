@@ -2,7 +2,7 @@
   "name": "led-canvas-fonts",
   "version": "0.0.1",
   "description": "Example LED fonts to be used with https://github.com/marionebl/led-canvas",
-  "main": "lib/index.js",
+  "main": "index",
   "scripts": {
     "build": "for file in $(ls ./fonts/); do ./bin/generator ./fonts/$file ./lib/fonts/${file/.font/.json}; done"
   },
