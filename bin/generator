@@ -48,11 +48,14 @@ font.meta.monospaced = characters.every(function (character) {
 
 for (var i = 0; i < characters.length; i += 1) {
 	var charData = characters[i];
+	var characterWidth = charWidth(0, charData);
 	var identifier = charData.shift().replace('# ', '');
+	var mangledData = generateCharData(charData, characterWidth, font.meta.lineHeight);
 
 	font.chars[identifier] = {
-		data: generateCharData(charData),
-		width: charWidth(0, charData)
+		data: mangledData.data,
+		offset: mangledData.offset,
+		width: characterWidth
 	};
 }
 
@@ -75,16 +78,45 @@ function charHeight(initial, character) {
 	return len > initial ? len : initial;
 }
 
-function generateCharData(character) {
+function matchingCoords(x, y){
+	return function (coord) {
+		return coord.x === x && coord.y === y;
+	};
+}
+
+function generateCharData(character, width, height) {
 	var coords = [];
+	var data = [];
+	var matrixLength = width*height;
+
 	for (var y = 0; y < character.length; y += 1) {
 		var line = character[y];
 
 		for (var x = 0; x < line.length; x += 1) {
 			if ([' ', '#', '.'].indexOf(line.charAt(x)) === -1) {
-				coords.push(x, y);
+				coords.push({ x: x, y: y });
 			}
 		}
 	}
-	return coords;
+
+	for (var i = 0; i < matrixLength; i += 1) {
+		var yc = Math.floor(i/width);
+		var xc = Math.floor(i - yc*width);
+
+		var match = coords.filter(matchingCoords(xc, yc));
+		if (match.length === 1) {
+			data.push(i);
+		}
+	}
+
+	var offset = data[0];
+
+	data = data.map(function(pixel) {
+		return pixel - offset;
+	});
+
+	return {
+		data: data,
+		offset: offset
+	};
 }
