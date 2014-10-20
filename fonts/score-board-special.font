@@ -394,6 +394,16 @@ x   x
     x
 xxxx
 
+# +
+.
+.
+.
+  x
+  x
+xxxxx
+  x
+  x
+
 # -
 .
 .
@@ -402,6 +412,45 @@ xxxx
 .
 xxx
 
+# *
+.
+.
+.
+.
+x x
+ x
+x x
+
+# /
+.
+.
+.
+.
+    x
+   x
+  x
+ x
+x
+
+# =
+.
+.
+.
+.
+xxxxx
+.
+xxxxx
+
+# %
+.
+.
+xx   x
+xx  x
+   x
+  x
+ x  xx
+x   xx
+
 # "
 x x
 x x
@@ -409,6 +458,72 @@ x x
 # '
 xx
 xx
+ x
+x
+
+# #
+.
+.
+ x x
+ x x
+xxxxx
+ x x
+xxxxx
+ x x
+ x x
+
+# @
+.
+.
+ xxx
+x   x
+x  xx
+x x x
+x  xx
+x
+ xxxx
+
+# &
+.
+.
+ x
+x x
+x x
+ x
+x x
+x  x x
+ xx x
+
+# _
+.
+.
+.
+.
+.
+.
+.
+.
+xxxxx
+
+# (
+.
+.
+ x
+x
+x
+x
+x
+x
+ x
+
+# )
+.
+.
+x
+ x
+ x
+ x
+ x
  x
 x
 
@@ -476,3 +591,106 @@ x
 x
 .
 x
+
+# \
+.
+.
+.
+x
+ x
+  x
+   x
+    x
+     x
+
+# |
+.
+.
+x
+x
+x
+x
+x
+x
+x
+
+# {
+.
+.
+  x
+ x
+ x
+x
+ x
+ x
+  x
+
+# }
+.
+.
+x
+ x
+ x
+  x
+ x
+ x
+x
+
+# <
+.
+.
+.
+  x
+ x
+x
+ x
+  x
+
+# >
+.
+.
+.
+x
+ x
+  x
+ x
+x
+
+# [
+.
+.
+xx
+x
+x
+x
+x
+x
+xx
+
+# ]
+.
+.
+xx
+ x
+ x
+ x
+ x
+ x
+xx
+
+# `
+x
+ x
+
+# ^
+  x
+ x x
+x   x
+
+# ~
+.
+.
+.
+.
+ xx x
+x  x
